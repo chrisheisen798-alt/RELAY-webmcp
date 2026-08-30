@@ -1,0 +1,1 @@
+"use client";export default function Error({reset}:{reset:()=>void}){return <main className="page"><div className="eyebrow">Something went wrong</div><h1>We couldn’t load this workspace view.</h1><p className="intro">No sensitive error details are displayed here.</p><button className="button" style={{marginTop:22}} onClick={reset}>Try again</button></main>}

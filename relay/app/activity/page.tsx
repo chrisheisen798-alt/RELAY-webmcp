@@ -1,0 +1,2 @@
+import { AppShell } from "@/components/app-shell";import { EmptyState } from "@/components/empty-state";
+export default function Activity(){return <AppShell active="Activity"><main className="page"><div className="eyebrow">Workspace audit trail</div><h1>Activity</h1><p className="intro">A timeline of real human, system, and future agent activity.</p><section className="card" style={{marginTop:30}}><EmptyState title="Activity will appear here as work happens.">Relay never fabricates agent events in the foundation phase.</EmptyState></section></main></AppShell>}

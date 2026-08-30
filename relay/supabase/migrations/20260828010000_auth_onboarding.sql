@@ -1,0 +1,3 @@
+-- Each new authenticated user receives one private organization and owner membership exactly once.
+create or replace function public.initialize_relay_user() returns trigger language plpgsql security definer set search_path=public as $$declare org_id uuid;begin insert into public.organizations(name) values (coalesce(nullif(split_part(new.email,'@',1),''),'My') || '''s Relay workspace') returning id into org_id;insert into public.memberships(organization_id,user_id,role) values(org_id,new.id,'owner');return new;end;$$;
+drop trigger if exists relay_user_onboarding on auth.users;create trigger relay_user_onboarding after insert on auth.users for each row execute procedure public.initialize_relay_user();

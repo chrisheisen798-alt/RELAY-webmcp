@@ -1,0 +1,1 @@
+import Link from "next/link";export default function NotFound(){return <main className="page"><div className="eyebrow">404</div><h1>That workspace view does not exist.</h1><p className="intro">Check the address or return to your dashboard.</p><Link className="button" style={{marginTop:22}} href="/dashboard">Back to dashboard</Link></main>}
